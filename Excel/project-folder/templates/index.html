@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPFO Bhopal - Excel File Processor</title>
+    <style>
+        /* General reset */
+        body, h1, h2, p, form, label {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+        
+        /* Header with logo */
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        header h1 {
+            font-size: 1.5em;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #0073aa;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content */
+        main {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #003366;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="file"] {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        button {
+            background-color: #0073aa;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005f8c;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #003366;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+
+ <script>
+        // Show a pop-up message after the form is submitted
+        function showSuccessMessage(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert("Successfully Process");
+            event.target.submit(); // Submit the form after the alert
+        }
+    </script>
+
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header>
+        <img src="static/images/epfo.jpg" alt="EPFO Logo">
+        <h1>Employees' Provident Fund Organisation, RO Bhopal</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="https://www.epfindia.gov.in/site_en/index.php" target="_blank">Home</a>
+        <a href="https://apps.bisag.co.in/EPFO/#about">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Upload Files for Processing</h2>
+        <form action="/process" method="post" enctype="multipart/form-data" onsubmit="showSuccessMessage(event)">
+            <label for="organized_file">Upload Organized File:</label>
+            <input type="file" name="organized_file" id="organized_file" required>
+            <br>
+            <label for="unorganized_file">Upload Unorganized File:</label>
+            <input type="file" name="unorganized_file" id="unorganized_file" required>
+            <br>
+            <button type="submit">Process Files</button>
+	    <button type="reset">Reset</button>
+        </form>
+    </main>
+<br>
+<br>
+<br>
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Employees' Provident Fund Organisation, RO Bhopal MP | All Rights Reserved | Veer Raikwar
+    </footer>
+</body>
+</html>
